@@ -41,11 +41,6 @@ namespace YOLO.desk.cs
                     yoloItemBindingSource.DataSource = items;
                     progressBar1.Value = 80;
                 }
-                //items[0].Confidence -> 0.0 (low) -> 1.0 (high)
-                //items[0].X -> bounding box
-                //items[0].Y -> bounding box
-                //items[0].Width -> bounding box
-                //items[0].Height -> bounding box
             }
             progressBar1.Value = 100;
         }
@@ -66,14 +61,6 @@ namespace YOLO.desk.cs
                 imagePathtxb.Text = string.Empty;
                 MessageBox.Show("Incorrect image path", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            /*using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "PNG|*.png|JPEG|*.jpeg" })
-            {
-                if(ofd.ShowDialog() == DialogResult.OK)
-                {
-                    pictureBox1.Image = Image.FromFile(ofd.FileName);
-                }
-            }*/
-
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -87,29 +74,6 @@ namespace YOLO.desk.cs
             var offsetY = rnd.Next(-10, 10);
 
             drawPoint();
-            /*int count = 0;
-            int X = 0;
-            int Y = 0;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    count++;
-                    string value = cell.Value.ToString(); // needs try catch
-                    if (count == 3)
-                    {
-                        MessageBox.Show($"The value of the cell is {value}. Count is equal to {count}.");
-                        X = Int32.Parse(value);
-                        
-                    }
-                    else if(count == 4)
-                    {
-                        MessageBox.Show($"The value of the cell is {value}. Count is equal to {count}.");
-                        Y = Int32.Parse(value);
-                        
-                    }
-                    MessageBox.Show(value);
-                }*/
         }
 
         public void drawPoint()  //what da fuck dis do??
@@ -189,16 +153,6 @@ namespace YOLO.desk.cs
             {
                
             }
-            /*Graphics g = Graphics.FromHwnd(pictureBox1.Handle);
-            SolidBrush brush = new SolidBrush(Color.LimeGreen);
-            using (Pen selPen = new Pen(Color.Blue))
-            {
-                g.DrawRectangle(selPen, X, Y, Size1, Size2);
-                g.DrawRectangle(selPen, 156, 98, 11, 31);
-                g.DrawRectangle(selPen, 0, 114, 54, 63);
-                g.DrawRectangle(selPen, 214, 110, 44, 45);
-            }*/
-            //g.Dispose();
         }
 
         private void Button4_Click(object sender, EventArgs e)
